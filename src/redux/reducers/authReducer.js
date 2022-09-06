@@ -4,9 +4,15 @@ const initialState = {
   token: "",
 };
 
-const registerReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case TYPES.POST_REGIS:
+      return {
+        ...state,
+        token: action.payload,
+      };
+
+    case TYPES.POST_LOGIN:
       return {
         ...state,
         token: action.payload,
@@ -17,4 +23,4 @@ const registerReducer = (state = initialState, action) => {
   }
 };
 
-export default registerReducer;
+export default authReducer;

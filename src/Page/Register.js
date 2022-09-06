@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDataRegis } from "../redux/actions/registerAction";
+import { getDataRegis } from "../redux/actions/authAction";
 
 const Register = () => {
   const dispatch = useDispatch();
-  const { registerReducer } = useSelector((state) => state);
+  const { authReducer } = useSelector((state) => state);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +21,7 @@ const Register = () => {
     dispatch(getDataRegis(email, password));
   };
 
-  console.log(registerReducer);
+  console.log(authReducer);
 
   return (
     <div>
@@ -37,8 +37,8 @@ const Register = () => {
         onChange={(e) => handleChangePassword(e)}
       />
       <button onClick={handleSubmit}>Submit</button>
-      {!!registerReducer.token.length && (
-        <p>Pendafataran Berhasil, token anda : {registerReducer.token}</p>
+      {!!authReducer.token.length && (
+        <p>Pendafataran Berhasil, token anda : {authReducer.token}</p>
       )}
     </div>
   );

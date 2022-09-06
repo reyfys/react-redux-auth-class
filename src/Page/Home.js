@@ -25,10 +25,13 @@ const Home = () => {
 
   return (
     <div>
+      <h1>Homepage</h1>
       <Link to="/regis">
-        <button>Registration</button>
+        <button>Register</button>
       </Link>
-      <button>Homepage</button>
+      <Link to="/login">
+        <button>Login</button>
+      </Link>
     </div>
   );
 };
